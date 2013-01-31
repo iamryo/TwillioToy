@@ -16,8 +16,7 @@ end
 # Voice Request URL
 get_or_post '/voice/?' do
   response = Twilio::TwiML::Response.new do |r|
-    r.Say 'Congratulations! You\'ve successfully deployed ' \
-          'the Twilio HackPack for Heroku and Sinatra!', :voice => 'woman'
+    r.Say 'Hello Katie! How are you doing today? ', :voice => 'man'
   end
   response.text
 end
