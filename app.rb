@@ -16,7 +16,8 @@ end
 # Voice Request URL
 get_or_post '/voice/?' do
   response = Twilio::TwiML::Response.new do |r|
-    r.Say "Hey, I am Ryan's phone robot.  How may I help you?", :voice => 'man', :loop => 4;
+    r.Gather timeout='10';
+    r.Say ".Hello, I am Ryan's phone robot.  How may I help you?", :voice => 'man';
   end
   response.text
 end
