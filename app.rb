@@ -16,7 +16,7 @@ end
 # Voice Request URL
 get_or_post '/voice/?' do
   response = Twilio::TwiML::Response.new do |r|
-    r.Gather timeout='10';
+    # r.Gather timeout='10';
     r.Say ".Hello, I am Ryan's phone robot.  How may I help you?", :voice => 'man';
   end
   response.text
@@ -25,8 +25,7 @@ end
 # SMS Request URL
 get_or_post '/sms/?' do
   response = Twilio::TwiML::Response.new do |r|
-    r.Sms 'Congratulations! You\'ve successfully deployed ' \
-          'the Twilio HackPack for Heroku and Sinatra!'
+    r.Sms 'I AM RYOOOOOOO!!!!!'
   end
   response.text
 end
