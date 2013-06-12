@@ -18,7 +18,14 @@ get_or_post '/voice/?' do
   response = Twilio::TwiML::Response.new do |r|
     # r.Gather timeout='10';
     r.Say ".Hello, I am Ryan's phone robot.  How may I help you?", :voice => 'man';
+    r.Listen[2, 3, 4]
+    if 2
+      r.Say ".What are you looking for again?", :voice => 'woman'
+    else
+      r.Say "No way Jose", :voice => 'man'
+    end
   end
+
   response.text
 end
 
